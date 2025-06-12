@@ -8,8 +8,6 @@ $defSaat  = isset($_GET['saat']) ? $_GET['saat'] : '09:00';
 $uyeler = liste("SELECT uye_id, uye_ad, uye_soyad, uye_mail, uye_telefon FROM ".prefix."_uye ORDER BY uye_ad ASC");
 
 if (isset($_POST["randevu_ekle"])) {
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
 
     $uye_id = (int)$_POST["uye_id"];
     $tarih = $_POST["randevu_tarih"];
