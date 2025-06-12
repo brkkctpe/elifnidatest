@@ -1029,6 +1029,7 @@ $(document).ready(function()
 });
 </script>
 
+<?php if(isset($calendar)) { ?>
 <script>
 
   $(document).ready(function() {
@@ -1072,6 +1073,7 @@ $(document).ready(function()
   });
 
 </script>
+<?php } ?>
 
 	</body>
 	<!--end::Body-->
