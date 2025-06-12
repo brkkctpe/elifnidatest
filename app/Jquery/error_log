@@ -1,0 +1,46 @@
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: dil in /home/elifnidazafer/public_html/app/Config/config-site.php on line 22
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: yonetici_id in /home/elifnidazafer/public_html/app/Config/config-site.php on line 43
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: yonetici_key in /home/elifnidazafer/public_html/app/Config/config-site.php on line 44
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: uye_id in /home/elifnidazafer/public_html/app/Config/config-site.php on line 72
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: uye_key in /home/elifnidazafer/public_html/app/Config/config-site.php on line 73
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: sepet in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 4
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 5
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 11
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 21
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: kupon_kod in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 44
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 46
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 47
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: urunler in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 16
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 16
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: sepet in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 4
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 5
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 11
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 21
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: kupon_kod in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 44
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 46
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 47
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Notice:  Undefined index: urunler in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 51
+[10-Mar-2025 10:15:36 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 51
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: dil in /home/elifnidazafer/public_html/app/Config/config-site.php on line 22
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: yonetici_id in /home/elifnidazafer/public_html/app/Config/config-site.php on line 43
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: yonetici_key in /home/elifnidazafer/public_html/app/Config/config-site.php on line 44
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: uye_id in /home/elifnidazafer/public_html/app/Config/config-site.php on line 72
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: uye_key in /home/elifnidazafer/public_html/app/Config/config-site.php on line 73
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: sepet in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 4
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 5
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 11
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 21
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: kupon_kod in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 44
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 46
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 47
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: urunler in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 16
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 16
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: sepet in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 4
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 5
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: kupon in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 11
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 21
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: kupon_kod in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 44
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 46
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined variable: indirim in /home/elifnidazafer/public_html/app/Helper/sepetdizi.php on line 47
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Notice:  Undefined index: urunler in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 51
+[10-Mar-2025 10:15:46 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/elifnidazafer/public_html/app/Jquery/default/sepetgetir.php on line 51

@@ -1,0 +1,66 @@
+
+
+CREATE TABLE `ekip_randevu` (
+  `randevu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `randevu_uye` int(11) NOT NULL,
+  `randevu_sepet` int(11) NOT NULL,
+  `randevu_seans` int(11) NOT NULL,
+  `randevu_zaman` int(11) NOT NULL,
+  `randevu_tur` int(11) NOT NULL,
+  `randevu_kayitzaman` int(11) NOT NULL,
+  PRIMARY KEY (`randevu_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+INSERT INTO ekip_randevu VALUES("19","1","6","1","1642498800","1","1641991274");
+INSERT INTO ekip_randevu VALUES("20","1","6","2","1643004000","1","1641991275");
+INSERT INTO ekip_randevu VALUES("21","1","6","3","1643713800","1","1641991275");
+INSERT INTO ekip_randevu VALUES("22","1","6","4","1644213600","1","1641991275");
+INSERT INTO ekip_randevu VALUES("23","1","6","1","1641934800","2","1641991275");
+INSERT INTO ekip_randevu VALUES("24","1","6","2","1642539600","2","1641991275");
+INSERT INTO ekip_randevu VALUES("25","1","6","3","1643144400","2","1641991275");
+INSERT INTO ekip_randevu VALUES("26","1","6","4","1643749200","2","1641991275");
+INSERT INTO ekip_randevu VALUES("27","1","7","0","1641991320","3","1641991320");
+INSERT INTO ekip_randevu VALUES("28","1","8","1","1642395600","1","1641994623");
+INSERT INTO ekip_randevu VALUES("29","1","8","2","1643105400","1","1641994623");
+INSERT INTO ekip_randevu VALUES("30","1","8","3","1643608800","1","1641994624");
+INSERT INTO ekip_randevu VALUES("31","1","8","4","1644313200","1","1641994624");
+INSERT INTO ekip_randevu VALUES("32","1","8","1","1642194000","2","1641994624");
+INSERT INTO ekip_randevu VALUES("33","1","8","2","1642798800","2","1641994624");
+INSERT INTO ekip_randevu VALUES("34","1","8","3","1643403600","2","1641994624");
+INSERT INTO ekip_randevu VALUES("35","1","8","4","1644008400","2","1641994624");
+INSERT INTO ekip_randevu VALUES("36","1","9","0","1642352113","3","1642352113");
+INSERT INTO ekip_randevu VALUES("37","1","10","1","1642539600","2","1642408186");
+INSERT INTO ekip_randevu VALUES("38","1","10","2","1643144400","2","1642408186");
+INSERT INTO ekip_randevu VALUES("39","1","10","3","1643749200","2","1642408186");
+INSERT INTO ekip_randevu VALUES("40","1","10","4","1644354000","2","1642408186");
+INSERT INTO ekip_randevu VALUES("41","1","11","1","1643002200","1","1642433637");
+INSERT INTO ekip_randevu VALUES("42","1","11","2","1643710200","1","1642433637");
+INSERT INTO ekip_randevu VALUES("43","1","11","3","1644318600","1","1642433637");
+INSERT INTO ekip_randevu VALUES("44","1","11","4","1644919800","1","1642433637");
+INSERT INTO ekip_randevu VALUES("45","1","12","1","1650265200","3","1649764603");
+INSERT INTO ekip_randevu VALUES("46","1","12","2","1651055400","3","1649764603");
+INSERT INTO ekip_randevu VALUES("47","1","12","3","1651473000","3","1649764603");
+INSERT INTO ekip_randevu VALUES("48","1","12","4","1652268600","3","1649764603");
+INSERT INTO ekip_randevu VALUES("49","1","13","1","1650265200","3","1650103445");
+INSERT INTO ekip_randevu VALUES("50","1","13","2","1650870000","3","1650103445");
+INSERT INTO ekip_randevu VALUES("51","1","13","3","1651656600","3","1650103445");
+INSERT INTO ekip_randevu VALUES("52","1","13","4","1652261400","3","1650103445");
+INSERT INTO ekip_randevu VALUES("53","1","14","1","1651055400","3","1650275405");
+INSERT INTO ekip_randevu VALUES("54","1","14","2","1651663800","3","1650275405");
+INSERT INTO ekip_randevu VALUES("55","1","14","3","1652081400","3","1650275405");
+INSERT INTO ekip_randevu VALUES("56","1","14","4","1652873400","3","1650275405");
+INSERT INTO ekip_randevu VALUES("57","3","15","1","1655706600","3","1655134783");
+INSERT INTO ekip_randevu VALUES("58","3","15","2","1656313200","3","1655134783");
+INSERT INTO ekip_randevu VALUES("59","3","15","3","1656916200","3","1655134783");
+INSERT INTO ekip_randevu VALUES("60","3","15","4","1657521000","3","1655134783");
+INSERT INTO ekip_randevu VALUES("61","2","16","1","1711348200","15","1711016157");
+INSERT INTO ekip_randevu VALUES("62","2","16","2","1711953000","15","1711016157");
+INSERT INTO ekip_randevu VALUES("63","2","16","3","1712557800","15","1711016157");
+INSERT INTO ekip_randevu VALUES("64","2","16","4","1713162600","15","1711016157");
+INSERT INTO ekip_randevu VALUES("65","4","18","1","1711359000","15","1711023706");
+INSERT INTO ekip_randevu VALUES("66","4","18","2","1711963800","15","1711023706");
+INSERT INTO ekip_randevu VALUES("67","4","18","3","1712565000","15","1711023706");
+INSERT INTO ekip_randevu VALUES("68","4","18","4","1713186000","15","1711023706");
+
+
+

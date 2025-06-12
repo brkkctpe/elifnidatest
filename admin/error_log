@@ -1,0 +1,18 @@
+[10-Jun-2025 15:33:02 Europe/Istanbul] PHP Notice:  Undefined variable: baglanti in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 19
+[10-Jun-2025 15:33:02 Europe/Istanbul] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 19
+[10-Jun-2025 15:33:02 Europe/Istanbul] PHP Notice:  Undefined variable: baglanti in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 22
+[10-Jun-2025 15:33:02 Europe/Istanbul] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, null given in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 22
+[10-Jun-2025 15:33:02 Europe/Istanbul] PHP Notice:  Undefined variable: calendar in /home/elifnidazafer/public_html/admin/index.php on line 1064
+[10-Jun-2025 15:33:02 Europe/Istanbul] PHP Warning:  implode(): Invalid arguments passed in /home/elifnidazafer/public_html/admin/index.php on line 1064
+[10-Jun-2025 17:49:46 Europe/Istanbul] PHP Notice:  Undefined variable: baglanti in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 21
+[10-Jun-2025 17:49:46 Europe/Istanbul] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 21
+[10-Jun-2025 17:49:46 Europe/Istanbul] PHP Notice:  Undefined variable: baglanti in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 24
+[10-Jun-2025 17:49:46 Europe/Istanbul] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, null given in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 24
+[10-Jun-2025 17:49:46 Europe/Istanbul] PHP Notice:  Undefined variable: calendar in /home/elifnidazafer/public_html/admin/index.php on line 1064
+[10-Jun-2025 17:49:46 Europe/Istanbul] PHP Warning:  implode(): Invalid arguments passed in /home/elifnidazafer/public_html/admin/index.php on line 1064
+[10-Jun-2025 17:49:50 Europe/Istanbul] PHP Notice:  Undefined variable: baglanti in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 21
+[10-Jun-2025 17:49:50 Europe/Istanbul] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 21
+[10-Jun-2025 17:49:50 Europe/Istanbul] PHP Notice:  Undefined variable: baglanti in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 24
+[10-Jun-2025 17:49:50 Europe/Istanbul] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, null given in /home/elifnidazafer/public_html/admin/modul/randevu/randevu_ekle.php on line 24
+[10-Jun-2025 17:49:50 Europe/Istanbul] PHP Notice:  Undefined variable: calendar in /home/elifnidazafer/public_html/admin/index.php on line 1064
+[10-Jun-2025 17:49:50 Europe/Istanbul] PHP Warning:  implode(): Invalid arguments passed in /home/elifnidazafer/public_html/admin/index.php on line 1064

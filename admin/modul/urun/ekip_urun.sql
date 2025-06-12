@@ -1,0 +1,35 @@
+
+
+CREATE TABLE `ekip_urun` (
+  `urun_id` int(11) NOT NULL AUTO_INCREMENT,
+  `urun_adi` varchar(225) NOT NULL,
+  `urun_permalink` varchar(225) NOT NULL,
+  `urun_sira` int(11) NOT NULL,
+  `urun_resim` varchar(225) NOT NULL,
+  `urun_resimler` longtext NOT NULL,
+  `urun_kategori` int(11) NOT NULL,
+  `urun_aciklama` text NOT NULL,
+  `urun_desc` varchar(225) NOT NULL,
+  `urun_keyw` varchar(225) NOT NULL,
+  `urun_ekleyen` int(11) NOT NULL,
+  `urun_durum` int(11) NOT NULL,
+  `urun_kayitzaman` int(11) NOT NULL,
+  `urun_dil` int(11) NOT NULL,
+  `urun_gid` int(11) NOT NULL,
+  `urun_anasayfa` int(11) NOT NULL,
+  `urun_fiyat` decimal(11,2) NOT NULL,
+  `urun_seans` int(11) NOT NULL,
+  `urun_haftaseans` int(11) NOT NULL,
+  `urun_seanssure` int(11) NOT NULL,
+  `urun_yuzyuzeseans` int(11) NOT NULL,
+  `urun_takvimtur` int(11) NOT NULL,
+  `urun_aralik` longtext NOT NULL,
+  PRIMARY KEY (`urun_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+INSERT INTO ekip_urun VALUES("15","1 Ay 4 Seans Yüzyüze Beslenme Dan??manl???","1-ay-4-seans-yuzyuze-beslenme-danismanligi-3254","0","paket-1_1711009247.webp","a:0:{}","1","<h2>Faydalar? nelerdir?</h2>\n							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p>\n\n\n							<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>\n\n\n							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>\n							\n							<h2>Faydalar? nelerdir?</h2>\n							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p>\n\n\n							<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>\n\n\n							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cons","","1","1","1711014799","1","15","0","500.00","4","1","30","4","0","a:3:{s:3:\"gun\";a:3:{i:0;s:0:\"\";i:1;s:1:\"1\";i:2;s:1:\"2\";}s:5:\"basla\";a:3:{i:0;s:5:\"17:40\";i:1;s:4:\"9:30\";i:2;s:4:\"9:30\";}s:5:\"bitir\";a:3:{i:0;s:5:\"18:40\";i:1;s:5:\"18:00\";i:2;s:5:\"18:00\";}}");
+INSERT INTO ekip_urun VALUES("16","Nunc id cursus metus aliquam","nunc-id-cursus-metus-aliquam-5643","0","urun-1_1711018385.png","a:0:{}","1","<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet commodo nulla facilisi nullam vehicula ipsum. Eget arcu dictum varius duis at consectetur lorem donec massa. Aliquam vestibulum morbi blandit cursus risus at ultrices mi. Ornare lectus sit amet est. Auctor neque vitae tempus quam pellentesque nec nam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi.<br></p>","","","1","1","1711018388","1","16","0","250.00","0","0","0","0","2","a:3:{s:3:\"gun\";a:1:{i:0;s:0:\"\";}s:5:\"basla\";a:1:{i:0;s:5:\"17:40\";}s:5:\"bitir\";a:1:{i:0;s:5:\"18:40\";}}");
+INSERT INTO ekip_urun VALUES("17","Nunc id cursus metus aliquam 2","nunc-id-cursus-metus-aliquam-2-7064","0","urun-1_1711018385.png","a:0:{}","1","<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet commodo nulla facilisi nullam vehicula ipsum. Eget arcu dictum varius duis at consectetur lorem donec massa. Aliquam vestibulum morbi blandit cursus risus at ultrices mi. Ornare lectus sit amet est. Auctor neque vitae tempus quam pellentesque nec nam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi.<br></p>","","","1","1","1711018408","1","17","0","250.00","0","0","0","0","2","a:3:{s:3:\"gun\";a:1:{i:0;s:0:\"\";}s:5:\"basla\";a:1:{i:0;s:5:\"17:40\";}s:5:\"bitir\";a:1:{i:0;s:5:\"18:40\";}}");
+
+
+
