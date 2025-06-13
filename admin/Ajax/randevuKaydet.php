@@ -12,6 +12,8 @@ if($uye_id && $urun_id && $tarih && $saat){
     $query = "INSERT INTO ".prefix."_randevu SET
                 randevu_uye='$uye_id',
                 randevu_tur='$urun_id',
+                randevu_sepet='0',
+                randevu_seans='0',
                 randevu_zaman='$zaman',
                 randevu_kayitzaman='".time()."'";
     $ekle = query($query);
