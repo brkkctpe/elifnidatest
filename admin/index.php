@@ -1063,6 +1063,17 @@ $(document).ready(function()
             $.get('Ajax/randevuTimes.php', {tarih: date.format('YYYY-MM-DD')}, function(html){
                 $('#randevuModal .modal-body').html(html);
                 $('#randevuModal').modal('show');
+                $('#randevuModal').off('submit', '#randevuForm').on('submit', '#randevuForm', function(e){
+                    e.preventDefault();
+                    $.post('Ajax/randevuKaydet.php', $(this).serialize(), function(res){
+                        if(res.status === 'ok'){
+                            $('#calendar').fullCalendar('renderEvent', {title: res.title, start: res.start}, true);
+                            $('#randevuModal').modal('hide');
+                        }else{
+                            alert(res.msg || 'Hata');
+                        }
+                    }, 'json');
+                });
             });
         },
         events: [
