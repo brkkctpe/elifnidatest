@@ -5,9 +5,6 @@ if ($_GET["do"] == "randevu_ekle") {
     return;
 }
 ?>
-<pre>
-<?php print_r($_GET); ?>
-</pre>
 
 
 <?php if($ickisim==""){

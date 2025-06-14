@@ -204,10 +204,11 @@
 					
 					$urun_adi = $deger["uye_ad"]." ".$deger["uye_soyad"]." - ".$deger["urun_adi"];
 					$randevu_zaman = date("Y-m-d",$deger["randevu_zaman"])."T".date("H:i:s",$deger["randevu_zaman"]);
-					$calendar[] = "{
-					  title: '".$urun_adi."',
-					  start: '".$randevu_zaman."'
-					}"; 
+					 $calendar[] = "{
+                                          id: '".$deger['randevu_id']."',
+                                          title: '".$urun_adi."',
+                                          start: '".$randevu_zaman."'
+                                        }";
 				}
 		?>
 		<div class="card card-custom gutter-b">

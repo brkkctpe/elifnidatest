@@ -1076,6 +1076,37 @@ $(document).ready(function()
                 });
             });
         },
+        eventClick: function(calEvent) {
+            $.get('Ajax/randevuTimes.php', {id: calEvent.id}, function(html){
+                $('#randevuModal .modal-body').html(html);
+                $('#randevuModal').modal('show');
+                $('#randevuModal').off('submit', '#randevuForm').on('submit', '#randevuForm', function(e){
+                    e.preventDefault();
+                    $.post('Ajax/randevuKaydet.php', $(this).serialize(), function(res){
+                        if(res.status === 'ok'){
+                            calEvent.title = res.title;
+                            calEvent.start = res.start;
+                            $('#calendar').fullCalendar('updateEvent', calEvent);
+                            $('#randevuModal').modal('hide');
+                        }else{
+                            alert(res.msg || 'Hata');
+                        }
+                    }, 'json');
+                });
+                $('#randevuModal').off('click', '#randevuSil').on('click', '#randevuSil', function(){
+                    if(confirm('Silmek istediğinize emin misiniz?')){
+                        $.post('Ajax/randevuSil.php', {id: calEvent.id}, function(res){
+                            if(res.status === 'ok'){
+                                $('#calendar').fullCalendar('removeEvents', calEvent.id);
+                                $('#randevuModal').modal('hide');
+                            }else{
+                                alert(res.msg || 'Hata');
+                            }
+                        }, 'json');
+                    }
+                });
+            });
+        },
         events: [
                 <?=implode(",",$calendar);?>
         ]
