@@ -1,7 +1,7 @@
 <?php !defined("ADMIN") ? die("Hacking?") : null; ?>
 <?php
 if ($_GET["do"] == "randevu_ekle") {
-    include "randevu_ekle.php";
+    echo "<div class='alert alert-info m-5'>Randevu ekleme takvim üzerinden yapılmaktadır.</div>";
     return;
 }
 ?>
@@ -114,7 +114,7 @@ if ($_GET["do"] == "randevu_ekle") {
 			</div>
 			<div class="card-body" id="yazdir">
 				<?php
-				$kurallar = "sepet_odemedurum='1' and";
+				$kurallar = "(sepet_odemedurum='1' OR randevu_sepet='0') and";
 				
 				if(g("arama")!=""){
 					$kurallar = $kurallar." (urun_adi LIKE '%".g("arama")."%'
@@ -164,19 +164,19 @@ if ($_GET["do"] == "randevu_ekle") {
 				
 				$sayfa = g("s") ? g("s") : 1;
 				$ksayisi=rows(query("SELECT * FROM ".prefix."_randevu 
-				INNER JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
-				INNER JOIN ".prefix."_urun ON ".prefix."_urun.urun_id = ".prefix."_randevu.randevu_tur
-				INNER JOIN ".prefix."_uye ON ".prefix."_uye.uye_id = ".prefix."_randevu.randevu_uye
+				LEFT JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
+                                LEFT JOIN ".prefix."_urun ON ".prefix."_urun.urun_id = ".prefix."_randevu.randevu_tur
+                                LEFT JOIN ".prefix."_uye ON ".prefix."_uye.uye_id = ".prefix."_randevu.randevu_uye
 				".$kurallar));
 				$limit=20;
 				$ssayisi=ceil($ksayisi/$limit);
 				$baslangic=($sayfa*$limit)-$limit;			  
 			  
-				$bak=query("SELECT * FROM ".prefix."_randevu 
-				INNER JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
-				INNER JOIN ".prefix."_urun ON ".prefix."_urun.urun_id = ".prefix."_randevu.randevu_tur
-				INNER JOIN ".prefix."_uye ON ".prefix."_uye.uye_id = ".prefix."_randevu.randevu_uye
-				".$kurallar." ORDER BY randevu_zaman ASC LIMIT $baslangic,$limit");
+				 $bak=query("SELECT * FROM ".prefix."_randevu
+                                LEFT JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
+                                LEFT JOIN ".prefix."_urun ON ".prefix."_urun.urun_id = ".prefix."_randevu.randevu_tur
+                                LEFT JOIN ".prefix."_uye ON ".prefix."_uye.uye_id = ".prefix."_randevu.randevu_uye
+                                ".$kurallar." ORDER BY randevu_zaman ASC LIMIT $baslangic,$limit");
 				$tableDizi = array();
 				while($yaz=row($bak)){
 					$tableDizi[] = $yaz;
@@ -195,10 +195,9 @@ if ($_GET["do"] == "randevu_ekle") {
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach($tableDizi as $deger){ 
-								$randevusay=rows(query("SELECT * FROM ".prefix."_randevu 
-								  INNER JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
-								  WHERE sepet_odemedurum='1' and sepet_uye='".$deger["uye_id"]."' and randevu_zaman>".time()."")); 
+							 <?php foreach($tableDizi as $deger){
+                                        $randevusay=rows(query("SELECT * FROM ".prefix."_randevu
+                                                                  WHERE randevu_uye='".$deger["uye_id"]."' and randevu_zaman>".time().""));
 								
 								if($randevusay==0){
 									$kalan = '<span class="badge badge-danger">'.$randevusay.'</span>';
