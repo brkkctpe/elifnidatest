@@ -9,8 +9,8 @@ $saat     = isset($_POST['randevu_saat']) ? $_POST['randevu_saat'] : '';
 
 if($uye_id && $urun_id && $tarih && $saat){
     $zaman = strtotime($tarih.' '.$saat);
-    
-     $data = [
+
+    $data = [
         'randevu_uye'        => $uye_id,
         'randevu_tur'        => $urun_id,
         'randevu_zaman'      => $zaman,
@@ -33,10 +33,17 @@ if($uye_id && $urun_id && $tarih && $saat){
     $query = "INSERT INTO ".prefix."_randevu SET ".implode(',', $parts);
     $ekle = query($query);
     if($ekle){
-        $uye  = row(query("SELECT uye_ad, uye_soyad FROM ".prefix."_uye WHERE uye_id='$uye_id'"));
+        $uye  = row(query("SELECT uye_ad, uye_soyad, uye_telefon FROM ".prefix."_uye WHERE uye_id='$uye_id'"));
         $urun = row(query("SELECT urun_adi FROM ".prefix."_urun WHERE urun_id='$urun_id'"));
         $title = $uye['uye_ad'].' '.$uye['uye_soyad'].' - '.$urun['urun_adi'];
-        $start = date('Y-m-d\TH:i:s', $zaman);
+        $start = date('Y-m-d\\TH:i:s', $zaman);
+
+        $telefon = preg_replace('/\\D/', '', $uye['uye_telefon']);
+        $smsMesaj = 'Sayın '.$uye['uye_ad'].' '.$uye['uye_soyad'].', '.$urun['urun_adi'].' için '.date('d.m.Y H:i', $zaman).' tarihinde randevunuz oluşturuldu.';
+        if(function_exists('smsgonder')){
+            smsgonder($telefon, $smsMesaj);
+        }
+
         echo json_encode(['status'=>'ok','title'=>$title,'start'=>$start]);
     }else{
         echo json_encode(['status'=>'error','msg'=>queryalert($query)]);
