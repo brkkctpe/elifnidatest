@@ -9,14 +9,28 @@ $saat     = isset($_POST['randevu_saat']) ? $_POST['randevu_saat'] : '';
 
 if($uye_id && $urun_id && $tarih && $saat){
     $zaman = strtotime($tarih.' '.$saat);
-    $query = "INSERT INTO ".prefix."_randevu SET
-                randevu_uye='$uye_id',
-                randevu_tur='$urun_id',
-                randevu_sepet='0',
-                randevu_seans='0',
-                randevu_secim='0',
-                randevu_zaman='$zaman',
-                randevu_kayitzaman='".time()."'";
+    
+     $data = [
+        'randevu_uye'        => $uye_id,
+        'randevu_tur'        => $urun_id,
+        'randevu_zaman'      => $zaman,
+        'randevu_kayitzaman' => time()
+    ];
+
+    $cols = query("SHOW COLUMNS FROM ".prefix."_randevu");
+    while($c = row($cols)){
+        if($c['Null']=='NO' && $c['Default']===NULL && strpos($c['Extra'],'auto_increment')===false){
+            if(!isset($data[$c['Field']])){
+                $data[$c['Field']] = '0';
+            }
+        }
+    }
+
+    $parts = [];
+    foreach($data as $f=>$v){
+        $parts[] = "$f='$v'";
+    }
+    $query = "INSERT INTO ".prefix."_randevu SET ".implode(',', $parts);
     $ekle = query($query);
     if($ekle){
         $uye  = row(query("SELECT uye_ad, uye_soyad FROM ".prefix."_uye WHERE uye_id='$uye_id'"));

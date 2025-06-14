@@ -191,11 +191,11 @@
 				$kurallar = substr_replace($kurallar, '', -3);
 				if($kurallar!=""){$kurallar = "WHERE ".$kurallar;}
 				
-				$bak=query("SELECT * FROM ".prefix."_randevu 
-				INNER JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
-				INNER JOIN ".prefix."_urun ON ".prefix."_urun.urun_id = ".prefix."_randevu.randevu_tur
-				INNER JOIN ".prefix."_uye ON ".prefix."_uye.uye_id = ".prefix."_randevu.randevu_uye
-				".$kurallar." ORDER BY randevu_zaman ASC");
+				$bak=query("SELECT * FROM ".prefix."_randevu
+                                LEFT JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
+                                LEFT JOIN ".prefix."_urun ON ".prefix."_urun.urun_id = ".prefix."_randevu.randevu_tur
+                                LEFT JOIN ".prefix."_uye ON ".prefix."_uye.uye_id = ".prefix."_randevu.randevu_uye
+                                ".$kurallar." ORDER BY randevu_zaman ASC");
 				$tableDizi = array();
 				while($yaz=row($bak)){
 					$tableDizi[] = $yaz;
