@@ -161,7 +161,7 @@ if ($_GET["do"] == "randevu_ekle") {
 				
 				$sayfa = g("s") ? g("s") : 1;
 				$ksayisi=rows(query("SELECT * FROM ".prefix."_randevu 
-				LEFT JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
+								LEFT JOIN ".prefix."_sepet ON ".prefix."_sepet.sepet_id = ".prefix."_randevu.randevu_sepet
                                 LEFT JOIN ".prefix."_urun ON ".prefix."_urun.urun_id = ".prefix."_randevu.randevu_tur
                                 LEFT JOIN ".prefix."_uye ON ".prefix."_uye.uye_id = ".prefix."_randevu.randevu_uye
 				".$kurallar));
@@ -236,13 +236,19 @@ if ($_GET["do"] == "randevu_ekle") {
 									<a href="index.php?mo=randevu_listele&uye=<?=ss($deger["uye_id"]);?>" class="btn btn-primary btn-sm">
 									  Randevu
 									</a>
-									<a href="index.php?mo=sepet_listele&sepet_uye=<?=ss($deger["uye_id"]);?>" class="btn btn-primary btn-sm">
-									  Sipariş
-									</a>
-									<a href="javascript:;" data-islem="otele" data-deger="<?=ss($deger["uye_id"]);?>{:}1" class="btn btn-danger btn-sm d-none">
-									  +10</a>
-									<a href="javascript:;" data-islem="otele" data-deger="<?=ss($deger["uye_id"]);?>{:}0" class="btn btn-danger btn-sm d-none">
-									  -10</a>
+									    <a href="index.php?mo=sepet_listele&sepet_uye=<?=ss($deger["uye_id"]);?>" class="btn btn-primary btn-sm">
+                                                                          Sipariş
+                                                                        </a>
+                                                                        <a href="javascript:;" class="btn btn-success btn-sm randevu-edit" data-id="<?=$deger['randevu_id']?>">
+                                                                          Düzenle
+                                                                        </a>
+                                                                        <a href="javascript:;" class="btn btn-danger btn-sm randevu-delete" data-id="<?=$deger['randevu_id']?>">
+                                                                          Sil
+                                                                        </a>
+                                                                        <a href="javascript:;" data-islem="otele" data-deger="<?=ss($deger["uye_id"]);?>{:}1" class="btn btn-danger btn-sm d-none">
+                                                                          +10</a>
+                                                                        <a href="javascript:;" data-islem="otele" data-deger="<?=ss($deger["uye_id"]);?>{:}0" class="btn btn-danger btn-sm d-none">
+                                                                          -10</a>
 								</td>
 							</tr>
 							<?php } ?>
@@ -261,4 +267,66 @@ if ($_GET["do"] == "randevu_ekle") {
 </div>
 <!--end::Entry-->
 
+<!-- Randevu düzenle modal -->
+<div class="modal fade" id="randevuModal" tabindex="-1" role="dialog" aria-labelledby="randevuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="randevuModalLabel">Saat Seç</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(function(){
+    $('body').on('click','.randevu-edit',function(e){
+        e.preventDefault();
+        var id = $(this).data('id');
+        $.get('Ajax/randevuTimes.php',{id:id},function(html){
+            $('#randevuModal .modal-body').html(html);
+            $('#randevuModal').modal('show');
+            $('#randevuModal').off('submit','#randevuForm').on('submit','#randevuForm',function(ev){
+                ev.preventDefault();
+                $.post('Ajax/randevuKaydet.php', $(this).serialize(), function(res){
+                    if(res.status==='ok'){
+                        location.reload();
+                    }else{
+                        alert(res.msg || 'Hata');
+                    }
+                },'json');
+            });
+            $('#randevuModal').off('click','#randevuSil').on('click','#randevuSil',function(){
+                if(confirm('Silmek istediğinize emin misiniz?')){
+                    $.post('Ajax/randevuSil.php',{id:id},function(res){
+                        if(res.status==='ok'){
+                            $('#satir'+id).remove();
+                            $('#randevuModal').modal('hide');
+                        }else{
+                            alert(res.msg || 'Hata');
+                        }
+                    },'json');
+                }
+            });
+        });
+    });
+
+    $('body').on('click','.randevu-delete',function(){
+        var id = $(this).data('id');
+        if(confirm('Silmek istediğinize emin misiniz?')){
+            $.post('Ajax/randevuSil.php',{id:id},function(res){
+                if(res.status==='ok'){
+                    $('#satir'+id).remove();
+                }else{
+                    alert(res.msg || 'Hata');
+                }
+            },'json');
+        }
+    });
+});
+</script>
 <?php } ?>
