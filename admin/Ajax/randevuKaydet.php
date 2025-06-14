@@ -14,6 +14,7 @@ if($uye_id && $urun_id && $tarih && $saat){
                 randevu_tur='$urun_id',
                 randevu_sepet='0',
                 randevu_seans='0',
+                randevu_secim='0',
                 randevu_zaman='$zaman',
                 randevu_kayitzaman='".time()."'";
     $ekle = query($query);
