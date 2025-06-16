@@ -6,7 +6,6 @@ $uye_id   = isset($_POST['uye_id']) ? (int)$_POST['uye_id'] : 0;
 $urun_id  = isset($_POST['urun_id']) ? (int)$_POST['urun_id'] : 0;
 $tarih    = isset($_POST['randevu_tarih']) ? $_POST['randevu_tarih'] : '';
 $saat     = isset($_POST['randevu_saat']) ? $_POST['randevu_saat'] : '';
-$randevu_id = isset($_POST['randevu_id']) ? (int)$_POST['randevu_id'] : 0;
 
 if($uye_id && $urun_id && $tarih && $saat){
     $zaman = strtotime($tarih.' '.$saat);
@@ -31,21 +30,21 @@ if($uye_id && $urun_id && $tarih && $saat){
     foreach($data as $f=>$v){
         $parts[] = "$f='$v'";
     }
-    if($randevu_id){
-        $query = "UPDATE ".prefix."_randevu SET ".implode(',', $parts)." WHERE randevu_id='$randevu_id'";
-        $ekle = query($query);
-        $sonId = $randevu_id;
-    }else{
-        $query = "INSERT INTO ".prefix."_randevu SET ".implode(',', $parts);
-        $ekle = query($query);
-        $sonId = mysqli_insert_id(con());
-    }
+    $query = "INSERT INTO ".prefix."_randevu SET ".implode(',', $parts);
+    $ekle = query($query);
     if($ekle){
-        $uye  = row(query("SELECT uye_ad, uye_soyad FROM ".prefix."_uye WHERE uye_id='$uye_id'"));
+        $uye  = row(query("SELECT uye_ad, uye_soyad, uye_telefon FROM ".prefix."_uye WHERE uye_id='$uye_id'"));
         $urun = row(query("SELECT urun_adi FROM ".prefix."_urun WHERE urun_id='$urun_id'"));
         $title = $uye['uye_ad'].' '.$uye['uye_soyad'].' - '.$urun['urun_adi'];
-        $start = date('Y-m-d\TH:i:s', $zaman);
-        echo json_encode(['status'=>'ok','title'=>$title,'start'=>$start,'id'=>$sonId]);
+        $start = date('Y-m-d\\TH:i:s', $zaman);
+
+        $telefon = preg_replace('/\\D/', '', $uye['uye_telefon']);
+        $smsMesaj = 'Sayın '.$uye['uye_ad'].' '.$uye['uye_soyad'].', '.$urun['urun_adi'].' için '.date('d.m.Y H:i', $zaman).' tarihinde randevunuz oluşturuldu.';
+        if(function_exists('smsgonder')){
+            smsgonder($telefon, $smsMesaj);
+        }
+
+        echo json_encode(['status'=>'ok','title'=>$title,'start'=>$start]);
     }else{
         echo json_encode(['status'=>'error','msg'=>queryalert($query)]);
     }
