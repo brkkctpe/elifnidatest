@@ -188,7 +188,8 @@ if ($_GET["do"] == "randevu_ekle") {
 								<th scope="col">Telefon</th>
 								<th scope="col">Seans</th>
 								<th scope="col">Program</th>
-								<th scope="col"></th>
+                                <th scope="col">Durum</th>
+                                <th scope="col"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -224,9 +225,17 @@ if ($_GET["do"] == "randevu_ekle") {
 								<td><a href="tel:<?=$deger["uye_telefon"]?>" target="_blank"><?=$deger["uye_telefon"]?></a></td>
 								<td><?=$deger["randevu_seans"]?></td>
 								<td><a href="index.php?do=urun_duzenle&id=<?=$deger["urun_id"]?>" target="_blank"><?=$deger["urun_adi"]?></a></td>
-								
-								
-								<td class="text-right">
+
+                                                                <td style="width:180px;">
+                                                                        <select class="form-control" data-changeislem="liste_guncelle" data-changedeger="_randevu{:}randevu_id{:}<?=ss($deger["randevu_id"]);?>{:}randevu_durum">
+                                                                                <option value="0" <?=ss($deger["randevu_durum"])==0 ? 'selected' : ''?>>Bekliyor</option>
+                                                                                <option value="1" <?=ss($deger["randevu_durum"])==1 ? 'selected' : ''?>>Randevu Gerçekleşti</option>
+                                                                                <option value="2" <?=ss($deger["randevu_durum"])==2 ? 'selected' : ''?>>Randevuya Katılmadı</option>
+                                                                                <option value="3" <?=ss($deger["randevu_durum"])==3 ? 'selected' : ''?>>Randevu İptal Edildi</option>
+                                                                        </select>
+                                                                </td>
+
+                                                                <td class="text-right">
 									<a href="index.php?mo=uyediyet_listele&id=<?=ss($deger["uye_id"]);?>" class="btn btn-primary btn-sm">
 									  Diyet
 									</a>

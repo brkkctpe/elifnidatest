@@ -1039,7 +1039,8 @@ $(document).ready(function()
 	monthNamesShort: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
 	dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
 	dayNamesShort: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
-	buttonText: {
+        firstDay: 1,
+        buttonText: {
 		today:    'Bugün',
 		month:    'Ay',
 		week:     'Hafta',

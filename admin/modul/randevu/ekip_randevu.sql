@@ -6,6 +6,7 @@ CREATE TABLE `ekip_randevu` (
   `randevu_sepet` int(11) NOT NULL,
   `randevu_seans` int(11) NOT NULL,
   `randevu_zaman` int(11) NOT NULL,
+  `randevu_durum` tinyint(1) NOT NULL DEFAULT '0',
   `randevu_tur` int(11) NOT NULL,
   `randevu_kayitzaman` int(11) NOT NULL,
   PRIMARY KEY (`randevu_id`)

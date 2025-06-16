@@ -800,6 +800,7 @@ ALTER TABLE `ekip_randevu` ADD `randevu_seans` int(11) NOT NULL;
 
 
 ALTER TABLE `ekip_randevu` ADD `randevu_zaman` int(11) NOT NULL;
+ALTER TABLE `ekip_randevu` ADD `randevu_durum` tinyint(1) NOT NULL DEFAULT '0';
 
 
 ALTER TABLE `ekip_randevu` ADD `randevu_tur` int(11) NOT NULL;

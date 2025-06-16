@@ -7,7 +7,7 @@ if (isset($_POST["randevu_ekle"])) {
     $saat = $_POST["randevu_saat"];
     $konu = $_POST["randevu_konu"];
     $not = $_POST["randevu_not"];
-    $durum = $_POST["randevu_durum"];
+    $durum = (int)$_POST["randevu_durum"];
 
     $sql = "INSERT INTO ekip_randevu (uye_id, randevu_tarih, randevu_saat, randevu_konu, randevu_not, randevu_durum)
             VALUES ('$uye_id', '$tarih', '$saat', '$konu', '$not', '$durum')";
@@ -50,9 +50,10 @@ if (isset($_POST["randevu_ekle"])) {
         <div class="form-group">
           <label>Durum:</label>
           <select name="randevu_durum" class="form-control">
-            <option value="Aktif">Aktif</option>
-            <option value="İptal">İptal</option>
-            <option value="Tamamlandı">Tamamlandı</option>
+            <option value="0">Bekliyor</option>
+            <option value="1">Randevu Gerçekleşti</option>
+            <option value="2">Randevuya Katılmadı</option>
+            <option value="3">Randevu İptal Edildi</option>
           </select>
         </div>
         <button type="submit" name="randevu_ekle" class="btn btn-success">Randevu Ekle</button>
