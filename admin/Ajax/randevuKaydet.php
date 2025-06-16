@@ -1,5 +1,6 @@
 <?php
 require_once("../../app/Config/config-db.php");
+require_once __DIR__ . "/../../app/Helper/smsgonder.php";
 header('Content-Type: application/json');
 
 $uye_id   = isset($_POST['uye_id']) ? (int)$_POST['uye_id'] : 0;
@@ -34,12 +35,22 @@ if($uye_id && $urun_id && $tarih && $saat){
     $ekle = query($query);
     if($ekle){
         $uye  = row(query("SELECT uye_ad, uye_soyad, uye_telefon FROM ".prefix."_uye WHERE uye_id='$uye_id'"));
-        $urun = row(query("SELECT urun_adi FROM ".prefix."_urun WHERE urun_id='$urun_id'"));
+
+        // SADECE urun_kategori = 0 olan ürünleri al
+        $urun = row(query("SELECT urun_adi FROM ".prefix."_urun WHERE urun_id='$urun_id' AND urun_kategori = 0"));
+
+        // Eğer ürün bulunamazsa hata döndür
+        if(!$urun){
+            echo json_encode(['status'=>'error','msg'=>'Seçilen ürün geçerli değil veya aktif değil.']);
+            exit;
+        }
+
         $title = $uye['uye_ad'].' '.$uye['uye_soyad'].' - '.$urun['urun_adi'];
         $start = date('Y-m-d\\TH:i:s', $zaman);
 
         $telefon = preg_replace('/\\D/', '', $uye['uye_telefon']);
-        $smsMesaj = 'Sayın '.$uye['uye_ad'].' '.$uye['uye_soyad'].', '.$urun['urun_adi'].' için '.date('d.m.Y H:i', $zaman).' tarihinde randevunuz oluşturuldu.';
+        $smsMesaj = 'Sayın '.$uye['uye_ad'].' '.$uye['uye_soyad'].', En Sağlıklı Beslenme Danışmanlığında - Beslenme ve Diyet Uzmani Elif Nida Zafer için '.date('d.m.Y H:i', $zaman).' tarihinde '.$urun['urun_adi'].' randevunuz oluşturuldu. İptal ve değişiklik için 02162323639 veya 05314096220 numaralı telefonlardan bize ulaşabilirsiniz. Adres tarifi icin linke tiklayabilirsiniz. https://g.co/kgs/x7yYgLM';
+
         if(function_exists('smsgonder')){
             smsgonder($telefon, $smsMesaj);
         }

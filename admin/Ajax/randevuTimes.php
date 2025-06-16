@@ -33,7 +33,7 @@ while($yaz = row($bak)){
 }
 
 $uyeler = liste("SELECT uye_id, uye_ad, uye_soyad, uye_mail, uye_telefon FROM ".prefix."_uye ORDER BY uye_ad ASC");
-$urunler = liste("SELECT urun_id, urun_adi FROM ".prefix."_urun WHERE urun_durum='1' ORDER BY urun_adi ASC");
+$urunler = liste("SELECT urun_id, urun_adi FROM ".prefix."_urun WHERE urun_durum='1' AND urun_kategori = '0' ORDER BY urun_adi ASC");
 
 $saatOptions = '';
 for($i=9*60; $i<17*60; $i+=30){
